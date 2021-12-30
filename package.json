@@ -1,6 +1,6 @@
 {
 	"name": "@travic/create-node-express",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "CLI for creating a simple hello world express app",
 	"main": "lib/index.js",
 	"types": "lib",

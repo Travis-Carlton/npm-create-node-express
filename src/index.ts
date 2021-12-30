@@ -5,19 +5,18 @@ import readline from "readline";
 import shell from "shelljs";
 
 const { log, error } = console;
-const { cd, exec } = shell;
 
 const cli = (args: string[]) => {
 	const realArgs = args.slice(2);
 	const ts = realArgs.includes("-ts");
 
-	const { question, on, close } = readline.createInterface({
+	const rL = readline.createInterface({
 		input: process.stdin,
 		output: process.stdout
 	});
 
-	question("Express App Name: ", app_name => {
-		question("Specify relative dir (default is current dir .): ", dir => {
+	rL.question("Express App Name: ", app_name => {
+		rL.question("Specify relative dir (default is current dir .): ", dir => {
 			if (!dir) dir = ".";
 			if (fs.existsSync(dir)) {
 				try {
@@ -29,20 +28,20 @@ const cli = (args: string[]) => {
 
 					log(`Placing ${app_name} in ${dir}`);
 
-					cd(dir);
-					exec(
+					shell.cd(dir);
+					shell.exec(
 						`git clone --single-branch --branch ${BRANCH} ${URL} ${app_name} && cd ${dir}/${app_name} && rm -rf .git`
 					);
 				} catch (e) {
 					log("Failed to create Express App");
 					error(e);
 				}
-				close();
+				rL.close();
 			}
 		});
 	});
 
-	on("close", () => {
+	rL.on("close", () => {
 		log("\n----------------");
 		process.exit(0);
 	});
