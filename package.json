@@ -1,11 +1,11 @@
 {
 	"name": "@travic/create-node-express",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "CLI for creating a simple hello world express app",
-	"main": "lib/src/index.js",
-	"types": "lib/src",
+	"main": "lib/index.js",
+	"types": "lib",
 	"bin": {
-		"create-express-app": "lib/src/index.js"
+		"create-express-app": "lib/index.js"
 	},
 	"scripts": {
 		"build": "tsc -p .",
