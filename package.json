@@ -1,48 +1,40 @@
 {
-	"name": "@travic/npm-template",
+	"name": "@travic/create-node-express",
 	"version": "1.0.0",
-	"description": "A helper function when trying to access nested keys",
-	"main": "lib/src",
+	"description": "CLI for creating a simple hello world express app",
+	"main": "lib/src/index.js",
 	"types": "lib/src",
+	"bin": {
+		"create-express-app": "lib/src/index.js"
+	},
 	"scripts": {
 		"build": "tsc -p .",
 		"test": "jest",
 		"pub": "npm publish --access public"
 	},
-	"keywords": [],
+	"keywords": [
+		"create-express-app",
+		"Creates a simple express app",
+		"hello world express app"
+	],
 	"author": "Travis Carlton",
-	"homepage": "https://github.com/Travis-Carlton/npm-travic-get",
-	"bugs": "https://github.com/Travis-Carlton/npm-travic-get/issues",
+	"homepage": "https://github.com/Travis-Carlton/npm-create-node-express",
+	"bugs": "https://github.com/Travis-Carlton/npm-create-node-express/issues",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Travis-Carlton/npm-travic-get"
+		"url": "https://github.com/Travis-Carlton/npm-create-node-express"
 	},
 	"license": "ISC",
-	"jest": {
-		"testPathIgnorePatterns": [
-			"lib"
-		],
-		"collectCoverage": true,
-		"collectCoverageFrom": [
-			"./src/index.ts",
-			"!**/node_modules/**",
-			"!**/vendor/**"
-		],
-		"coverageReporters": [
-			"json-summary",
-			"text",
-			"lcov"
-		]
-	},
 	"devDependencies": {
 		"@babel/core": "^7.12.17",
 		"@babel/preset-env": "^7.12.17",
 		"@babel/preset-typescript": "^7.12.17",
-		"@types/jest": "^26.0.22",
-		"@types/node": "^14.14.30",
-		"babel-jest": "^26.6.3",
-		"jest": "^26.6.3",
+		"@types/node": "^14.18.3",
+		"@types/shelljs": "^0.8.10",
 		"typescript": "^3.9.5"
+	},
+	"dependencies": {
+		"shelljs": "^0.8.4"
 	},
 	"files": [
 		"lib/src/",
