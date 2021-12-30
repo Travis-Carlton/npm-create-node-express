@@ -37,7 +37,7 @@
 		"shelljs": "^0.8.4"
 	},
 	"files": [
-		"lib/src/",
+		"lib/",
 		"README.md"
 	]
 }
